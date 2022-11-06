@@ -56,6 +56,9 @@
   align-items: center;
   flex-direction: row;
 }
+.container main .logo-box .restart-box:hover {
+  background-color: #DBE8ED;
+}
 .container main .game-box {
   width: 100%;
   display: flex;
@@ -76,6 +79,12 @@
   justify-content: center;
   align-items: center;
   flex-direction: row;
+}
+.container main .game-box div .full-X {
+  display: none;
+}
+.container main .game-box div .part-X {
+  display: none;
 }
 .container main .result-box {
   width: 100%;

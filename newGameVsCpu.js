@@ -1,27 +1,35 @@
 let gameBoxes = document.querySelectorAll(".game-box div");
+let fullX = document.querySelector(".full-X");
+let partX = document.querySelector(".part-X")
+
 //აქ ჩამოვივლი ყველა ყუთზე და ვამოწმებ თუ შვილი ყავს უკვე მაშინ აღარ მომცეს საშუალება რო ჩავსვა ფოტო
+let clicked = false;
 gameBoxes.forEach(box=>{
     box.addEventListener("click", function(){
-        if(box.children.length > 0){
-            box.setAttribute("disabled", "")
-        }else{
-            let gameSign = document.createElement("img");
-            box.appendChild(gameSign)
-            gameSign.setAttribute("src", "./images/icon-x.svg")
-            
+
+        partX.style.display = "none"
+        if(box.firstElementChild.style.display = "none"){
+            box.firstElementChild.style.display = "block";
+            box.lastElementChild.style.display = "none"
         }
-        
     })
-    box.addEventListener("mousemove", function(){ 
-        if(box.children.length > 0){
-            box.style.cursor = "default" 
-        }else{
-            box.style.cursor = "pointer" 
-            
-        }
+    box.addEventListener("mouseenter", function(){ 
+       if(box.firstElementChild.style.display = "none"){
+        // box.lastElementChild.style.display = "block"   //ეს ნაწილი არ მუშაობს 
+        console.log("none")
+
+       }else{
+        console.log("block")
+        box.lastElementChild.style.display = "none"
+        box.setAttribute("disabled", "")
+       }
+      
+    })
+    box.addEventListener("mouseleave", function(){
+        box.lastElementChild.style.display = "none"
     })
 })
-
+//restart-ზე კლიკის დროს რო გამოჩნდეს რესტარტის სექცია
 let restartBox = document.querySelector(".restart-box");
 let restartSection = document.querySelector("section")
 

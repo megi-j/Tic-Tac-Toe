@@ -25,14 +25,18 @@ o.addEventListener("click", function(){
     xPath.setAttribute("fill", "#A8BFC9");
 })
 
-let vsCpuButton = document.querySelector(".info-box a");
-vsCpuButton.addEventListener("click", function(){
+let newGameButton = document.querySelector(".info-box a");
+newGameButton.addEventListener("click", function(){
     if(xClicked){
-        vsCpuButton.setAttribute("href", "./newGameVsCpu.html")
+        newGameButton.setAttribute("href", "./newGameVsCpu.html")
     }else if(oClicked) {
-        vsCpuButton.setAttribute("href", "./newGameVsCpu.html")
+        newGameButton.setAttribute("href", "./newGameVsCpu.html")
     }else{
-        vsCpuButton.setAttribute("disabled", "")
+        newGameButton.setAttribute("disabled", "")
     }
     
 })
+let vsCpuButton = document.querySelector(".vs-cpu");
+// vsCpuButton.addEventListener("mouseover", function(){
+//     vsCpuButton.style.backgroundColor = "#FFC860"
+// })

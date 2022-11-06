@@ -44,7 +44,9 @@
                 border-radius: 10px;
                 cursor: pointer;
                 @include center(row, center, center);
-                
+                &:hover{
+                    background-color: $color9;
+                }
             }
         }
         .game-box{
@@ -60,6 +62,12 @@
                 border-radius: 15px;
                 background-color: #1F3641;
                 @include center(row, center, center);
+                .full-X{
+                    display: none;
+                }
+                .part-X{
+                    display: none;
+                }
             }
         }
         .result-box {
