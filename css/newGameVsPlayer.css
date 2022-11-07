@@ -1,0 +1,161 @@
+.container {
+  max-width: 1440px;
+  width: 100%;
+  height: 100vh;
+  margin: 0 auto;
+  background-color: #1A2A33;
+  font-family: "Outfit", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+.container main {
+  width: 460px;
+  height: 623px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+.container main .logo-box {
+  width: 100%;
+  height: 52px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+.container main .logo-box .turn {
+  width: 140px;
+  height: 52px;
+  background-color: #1F3641;
+  box-shadow: inset 0px -4px 0px #10212A;
+  border-radius: 10px;
+  gap: 13px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+.container main .logo-box .turn span {
+  color: #A8BFC9;
+  letter-spacing: 1px;
+  font-size: 16px;
+  font-weight: 700;
+}
+.container main .logo-box .restart-box {
+  width: 52px;
+  height: 52px;
+  background-color: #A8BFC9;
+  box-shadow: inset 0px -4px 0px #6B8997;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+.container main .logo-box .restart-box:hover {
+  background-color: #DBE8ED;
+}
+.container main .game-box {
+  width: 100%;
+  display: flex;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.container main .game-box div {
+  width: 140px;
+  height: 140px;
+  box-shadow: inset 0px -8px 0px #10212A;
+  border-radius: 15px;
+  background-color: #1F3641;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+.container main .game-box div .full-X {
+  display: none;
+}
+.container main .game-box div .part-X {
+  display: none;
+}
+.container main .result-box {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+.container main .result-box div {
+  width: 140px;
+  height: 72px;
+  border-radius: 15px;
+}
+.container main .result-box div h6 {
+  text-align: center;
+  margin: 10px auto;
+  font-size: 15px;
+}
+.container main .result-box div h5 {
+  text-align: center;
+  margin-top: 0;
+  font-size: 24px;
+}
+.container main .result-box div:first-child {
+  background-color: #31C3BD;
+}
+.container main .result-box div:last-child {
+  background-color: #F2B137;
+}
+.container main .result-box div:nth-child(2) {
+  background-color: #A8BFC9;
+}
+.container .restart-section {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+}
+.container section {
+  display: none;
+  max-width: 1440px;
+  width: 100%;
+  height: 266px;
+  background-color: #1F3641;
+  position: absolute;
+}
+.container section h1 {
+  letter-spacing: 2.5px;
+  font-size: 40px;
+  font-weight: 700;
+  color: #A8BFC9;
+}
+.container section button {
+  height: 52px;
+  cursor: pointer;
+  letter-spacing: 1px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #1A2A33;
+  border: none;
+}
+.container section .restart-button-box button:first-child {
+  width: 139px;
+  background-color: #A8BFC9;
+  box-shadow: inset 0px -4px 0px #6B8997;
+  border-radius: 10px;
+}
+.container section .restart-button-box button:last-child {
+  width: 151px;
+  box-shadow: inset 0px -4px 0px #CC8B13;
+  border-radius: 10px;
+  background-color: #F2B137;
+  margin-left: 16px;
+}/*# sourceMappingURL=newGameVsPlayer.css.map */

@@ -2,7 +2,11 @@ let x = document.querySelector(".x");
 let o = document.querySelector(".o");
 let xPath = document.querySelector(".x path")
 let oPath = document.querySelector(".o path")
-
+let newGameButton = document.querySelector(".info-box a");
+let vsCpuButton = document.querySelector(".vs-cpu");
+let vsPlayerButton = document.querySelector(".vs-player")
+let vsCpuA = document.querySelector(".vs-cpu-a");
+let vsPlayerA = document.querySelector(".vs-player-a")
 let xClicked = false;
 let oClicked = false;
 // აქ x da o -ზე კლიკის დროს ფერებს ვცვლი
@@ -24,19 +28,19 @@ o.addEventListener("click", function(){
     x.style.backgroundColor = "#1A2A33";
     xPath.setAttribute("fill", "#A8BFC9");
 })
-
-let newGameButton = document.querySelector(".info-box a");
-newGameButton.addEventListener("click", function(){
-    if(xClicked){
-        newGameButton.setAttribute("href", "./newGameVsCpu.html")
-    }else if(oClicked) {
-        newGameButton.setAttribute("href", "./newGameVsCpu.html")
+//ამ ღილაკებზე კლიკის დროს ვამოწმებ თუ მოთამაშემ უკვე აირჩია ნიშანი მაშინ შესაბამის გვერდზე გადავიდეს
+vsCpuButton.addEventListener("click", function(){
+    if(xClicked || oClicked){
+        vsCpuA.setAttribute("href", "./newGameVsCpu.html")
+        console.log("dasda")
     }else{
-        newGameButton.setAttribute("disabled", "")
+        vsCpuButton.setAttribute("disabled", "")
     }
-    
 })
-let vsCpuButton = document.querySelector(".vs-cpu");
-// vsCpuButton.addEventListener("mouseover", function(){
-//     vsCpuButton.style.backgroundColor = "#FFC860"
-// })
+vsPlayerButton.addEventListener("click", function(){
+    if(xClicked || oClicked){
+        vsPlayerA.setAttribute("href", "./newGameVsPlayer.html")
+    }else{
+        vsPlayerButton.setAttribute("disabled", "")
+    }
+})

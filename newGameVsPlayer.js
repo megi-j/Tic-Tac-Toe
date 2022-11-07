@@ -32,11 +32,9 @@ let restartSection = document.querySelector("section")
 let cancelButton = document.querySelector(".restart-button-box button:first-child")
 let restartButton = document.querySelector(".restart-button-box button:last-child")
 let restartButtonA = document.querySelector(".restart-A")
-
 restartBox.addEventListener("click", function(){
     restartSection.classList.add("restart-section")
 })
-
 
 cancelButton.addEventListener("click", function(){
     restartSection.classList.remove("restart-section")
