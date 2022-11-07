@@ -1,18 +1,35 @@
 let gameBoxes = document.querySelectorAll(".game-box div");
 let fullX = document.querySelector(".full-X");
-let partX = document.querySelector(".part-X")
+let partX = document.querySelector(".part-X");
+let fullO = document.querySelector(".full-O")
 
 //აქ ჩამოვივლი ყველა ყუთზე და რომელსაც დავაკლიკებ იმაზე ჩნდება x ნიშანი,ხოლო მეორე ნიშანი რომელიც მაუსის მიტანაზე ჩნდება, კლიკზე ქრება.
 let clicked = false;
+let clickCounter = 1;
 gameBoxes.forEach(box=>{
+    clickBox(box)
+    hoverBox(box)
+
+})
+
+function clickBox(box){
     box.addEventListener("click", function(){
         box.lastElementChild.style.display = "none"
-        if(box.firstElementChild.style.display = "none"){
+        if(!box.clicked && clickCounter % 2 != 0){
             box.firstElementChild.style.display = "block";
+            clickCounter++;
             box.lastElementChild.style.display = "none" 
+        }else if(!box.clicked && clickCounter % 2 === 0){
+            box.querySelector(".full-O").style.display = "block"
+            clickCounter++;
+        }else if(box.clicked){
+            box.setAttribute("disabled", true)
         }
         box.clicked = true;
     })
+}
+
+function hoverBox(box){
     box.addEventListener("mouseenter", function(){ 
         if(!box.clicked){
             box.lastElementChild.style.display = "block";
@@ -25,7 +42,7 @@ gameBoxes.forEach(box=>{
     box.addEventListener("mouseleave", function(){
         box.lastElementChild.style.display = "none"
     })
-})
+}
 //restart-ზე კლიკის დროს რო გამოჩნდეს რესტარტის სექცია
 let restartBox = document.querySelector(".restart-box");
 let restartSection = document.querySelector("section")
@@ -43,3 +60,4 @@ cancelButton.addEventListener("click", function(){
 restartButton.addEventListener("click", function(){
     restartButtonA.setAttribute("href", "./index.html")
 })
+

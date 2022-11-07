@@ -32,15 +32,10 @@ o.addEventListener("click", function(){
 vsCpuButton.addEventListener("click", function(){
     if(xClicked || oClicked){
         vsCpuA.setAttribute("href", "./newGameVsCpu.html")
-        console.log("dasda")
-    }else{
-        vsCpuButton.setAttribute("disabled", "")
     }
 })
 vsPlayerButton.addEventListener("click", function(){
     if(xClicked || oClicked){
         vsPlayerA.setAttribute("href", "./newGameVsPlayer.html")
-    }else{
-        vsPlayerButton.setAttribute("disabled", "")
     }
 })
