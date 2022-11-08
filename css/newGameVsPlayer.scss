@@ -38,6 +38,9 @@
                     font-size: $font-size16;
                     font-weight: $font-weight7;
                 }
+                .O-turn {
+                    display: none;
+                }
             }
             .restart-box{
                 width: 52px;
@@ -65,10 +68,7 @@
                 border-radius: 15px;
                 background-color: #1F3641;
                 @include center(row, center, center);
-                .full-X, .full-O{
-                    display: none;
-                }
-                .part-X{
+                .full-X, .full-O, .part-O, .part-X{
                     display: none;
                 }
             }

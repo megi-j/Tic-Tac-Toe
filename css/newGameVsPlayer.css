@@ -48,6 +48,9 @@
   font-size: 16px;
   font-weight: 700;
 }
+.container main .logo-box .turn .O-turn {
+  display: none;
+}
 .container main .logo-box .restart-box {
   width: 52px;
   height: 52px;
@@ -84,10 +87,7 @@
   align-items: center;
   flex-direction: row;
 }
-.container main .game-box div .full-X, .container main .game-box div .full-O {
-  display: none;
-}
-.container main .game-box div .part-X {
+.container main .game-box div .full-X, .container main .game-box div .full-O, .container main .game-box div .part-O, .container main .game-box div .part-X {
   display: none;
 }
 .container main .result-box {
