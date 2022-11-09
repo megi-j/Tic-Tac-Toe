@@ -5,13 +5,16 @@ let fullO = document.querySelector(".full-O");
 let partO = document.querySelector(".part-O");
 let Xturn = document.querySelector(".X-turn");
 let Oturn = document.querySelector(".O-turn");
+let nextRoundButton = document.querySelector(".next")
+let whoTakesRound = document.querySelector(".who-takes-round");
 //აქ ჩამოვივლი ყველა ყუთზე და რომელსაც დავაკლიკებ იმაზე ჩნდება x ნიშანი,ხოლო მეორე ნიშანი რომელიც მაუსის მიტანაზე ჩნდება, კლიკზე ქრება.
 let clicked = false;
 let clickCounter = 1;
+
 gameBoxes.forEach(box=>{
     clickBox(box)
     hoverBox(box)
-  
+    
 })
 
 function clickBox(box){
@@ -22,13 +25,20 @@ function clickBox(box){
             Oturn.style.display = "block";
             Xturn.style.display = "none"
             clickCounter++;
-            box.lastElementChild.style.display = "none" 
+            box.lastElementChild.style.display = "none";
+            if(gameBoxes[0].querySelector(".full-X").style.display == "block" && gameBoxes[1].querySelector(".full-X").style.display == "block" && gameBoxes[2].querySelector(".full-X").style.display == "block"){
+                whoTakesRound.style.display = "flex"
+            }
+            
         }else if(!box.clicked && clickCounter % 2 === 0){
             box.querySelector(".full-O").style.display = "block";
             Oturn.style.display = "none";
             Xturn.style.display = "block"
             clickCounter++;
-            box.querySelector(".part-O").style.display = "none"
+            box.querySelector(".part-O").style.display = "none";
+            if(gameBoxes[0].querySelector(".full-O").style.display == "block" && gameBoxes[1].querySelector(".full-O").style.display == "block" && gameBoxes[2].querySelector(".full-O").style.display == "block"){
+                console.log("keke")
+            }
         }else if(box.clicked){
             box.setAttribute("disabled", true)
         }
@@ -60,6 +70,7 @@ let restartSection = document.querySelector("section")
 let cancelButton = document.querySelector(".restart-button-box button:first-child")
 let restartButton = document.querySelector(".restart-button-box button:last-child")
 let restartButtonA = document.querySelector(".restart-A")
+
 restartBox.addEventListener("click", function(){
     restartSection.classList.add("restart-section")
 })
@@ -71,4 +82,23 @@ cancelButton.addEventListener("click", function(){
 restartButton.addEventListener("click", function(){
     restartButtonA.setAttribute("href", "./index.html")
 })
+
+let nextA = document.querySelector(".next-A")
+// function startNextRound(){
+    // gameBoxes.forEach(box=>{
+        nextRoundButton.addEventListener("click", function(){
+            whoTakesRound.style.display = "none";
+            // nextA.setAttribute("href", "./newGameVsPlayer.html")
+            
+            // box.firstElementChild.style.display = "none";
+            // box.querySelector(".full-O").style.display = "none"; 
+            // box.lastElementChild.style.display = "none";
+            // box.querySelector(".part-O").style.display = "none";
+         
+           
+        })
+    // })
+    
+// }
+
 

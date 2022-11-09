@@ -143,4 +143,44 @@
             margin-left: 16px;
         }
     }
+    .who-takes-round{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: column;
+        p{
+            font-weight: $font-weight7;
+            font-size: $font-size16;
+            color: $color3;
+            letter-spacing: 1px;
+        }
+        h2{
+            font-weight: $font-weight7;
+            font-size: $font-size40;
+            color: $color5;
+            letter-spacing: 2.5px;
+        }
+        .quite{
+            width: 76px;
+            height: 52px;
+            box-shadow: inset 0px -4px 0px #6B8997;
+            border-radius: 10px;
+            background-color: $color3;
+            letter-spacing: 1px;
+            font-weight: $font-weight7;
+            font-size: $font-size16;
+        }
+        .next {
+            width: 146px;
+            height: 52px;
+            box-shadow: inset 0px -4px 0px #CC8B13;
+            border-radius: 10px;
+            background-color: $color4;
+            letter-spacing: 1px;
+            font-size: $font-size16;
+            font-weight: $font-weight7;
+            margin-left: $font-size16;
+        }
+
+    }
 }
