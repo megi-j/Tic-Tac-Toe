@@ -144,7 +144,7 @@
         }
     }
     .who-takes-round{
-        display: flex;
+        display: none;
         justify-content: space-evenly;
         align-items: center;
         flex-direction: column;
@@ -153,6 +153,15 @@
             font-size: $font-size16;
             color: $color3;
             letter-spacing: 1px;
+        }
+        .winner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 35%;
+            .win-X, .win-O{
+                display: none;
+            }
         }
         h2{
             font-weight: $font-weight7;

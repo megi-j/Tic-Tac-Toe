@@ -7,9 +7,16 @@ let Xturn = document.querySelector(".X-turn");
 let Oturn = document.querySelector(".O-turn");
 let nextRoundButton = document.querySelector(".next")
 let whoTakesRound = document.querySelector(".who-takes-round");
+let winnerX = document.querySelector(".win-X");
+let winnerO = document.querySelector(".win-O");
+let winnerPlayer = document.querySelector(".who-takes-round span")
+let p2Score =document.querySelector(".p2-score")
+let p1Score = document.querySelector(".p1-score")
 //აქ ჩამოვივლი ყველა ყუთზე და რომელსაც დავაკლიკებ იმაზე ჩნდება x ნიშანი,ხოლო მეორე ნიშანი რომელიც მაუსის მიტანაზე ჩნდება, კლიკზე ქრება.
 let clicked = false;
 let clickCounter = 1;
+let p2WinScore = 0;
+let p1WinScore = 0;
 
 gameBoxes.forEach(box=>{
     clickBox(box)
@@ -26,8 +33,16 @@ function clickBox(box){
             Xturn.style.display = "none"
             clickCounter++;
             box.lastElementChild.style.display = "none";
-            if(gameBoxes[0].querySelector(".full-X").style.display == "block" && gameBoxes[1].querySelector(".full-X").style.display == "block" && gameBoxes[2].querySelector(".full-X").style.display == "block"){
-                whoTakesRound.style.display = "flex"
+            if((gameBoxes[0].querySelector(".full-X").style.display == "block" && gameBoxes[1].querySelector(".full-X").style.display == "block" && gameBoxes[2].querySelector(".full-X").style.display == "block") || (gameBoxes[0].querySelector(".full-X").style.display == "block" && gameBoxes[3].querySelector(".full-X").style.display == "block" && gameBoxes[6].querySelector(".full-X").style.display == "block") ||
+            (gameBoxes[0].querySelector(".full-X").style.display == "block" && gameBoxes[4].querySelector(".full-X").style.display == "block" && gameBoxes[8].querySelector(".full-X").style.display == "block") ||
+            (gameBoxes[1].querySelector(".full-X").style.display == "block" && gameBoxes[4].querySelector(".full-X").style.display == "block" && gameBoxes[7].querySelector(".full-X").style.display == "block")){
+                whoTakesRound.style.display = "flex";
+                winnerX.style.display = "block";
+                winnerO.style.display = "none";
+                p2WinScore++;
+                console.log(p2WinScore)
+                p2Score.innerHTML = p2WinScore;
+                
             }
             
         }else if(!box.clicked && clickCounter % 2 === 0){
@@ -36,8 +51,15 @@ function clickBox(box){
             Xturn.style.display = "block"
             clickCounter++;
             box.querySelector(".part-O").style.display = "none";
-            if(gameBoxes[0].querySelector(".full-O").style.display == "block" && gameBoxes[1].querySelector(".full-O").style.display == "block" && gameBoxes[2].querySelector(".full-O").style.display == "block"){
-                console.log("keke")
+            if((gameBoxes[0].querySelector(".full-O").style.display == "block" && gameBoxes[1].querySelector(".full-O").style.display == "block" && gameBoxes[2].querySelector(".full-O").style.display == "block") ||
+            (gameBoxes[0].querySelector(".full-O").style.display == "block" && gameBoxes[3].querySelector(".full-O").style.display == "block" && gameBoxes[6].querySelector(".full-O").style.display == "block") ||
+            (gameBoxes[0].querySelector(".full-O").style.display == "block" && gameBoxes[4].querySelector(".full-O").style.display == "block" && gameBoxes[8].querySelector(".full-O").style.display == "block") ||
+            (gameBoxes[1].querySelector(".full-O").style.display == "block" && gameBoxes[4].querySelector(".full-O").style.display == "block" && gameBoxes[7].querySelector(".full-O").style.display == "block")){
+                whoTakesRound.style.display = "flex";
+                winnerO.style.display = "block";
+                winnerX.style.display = "none";
+                p1WinScore++;
+                p1Score.innerHTML = p1WinScore;
             }
         }else if(box.clicked){
             box.setAttribute("disabled", true)
