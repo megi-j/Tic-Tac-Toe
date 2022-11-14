@@ -14,7 +14,7 @@ let clickCounter = 1;
 gameBoxes.forEach(box=>{
     clickBox(box)
     hoverBox(box)
-    
+    startNextRound(box)
 })
 
 function clickBox(box){
@@ -84,21 +84,15 @@ restartButton.addEventListener("click", function(){
 })
 
 let nextA = document.querySelector(".next-A")
-// function startNextRound(){
-    // gameBoxes.forEach(box=>{
+function startNextRound(box){
         nextRoundButton.addEventListener("click", function(){
+            box.clicked = false;
             whoTakesRound.style.display = "none";
-            // nextA.setAttribute("href", "./newGameVsPlayer.html")
-            
-            // box.firstElementChild.style.display = "none";
-            // box.querySelector(".full-O").style.display = "none"; 
-            // box.lastElementChild.style.display = "none";
-            // box.querySelector(".part-O").style.display = "none";
-         
-           
+            box.querySelector(".full-O").style.display = "none"; 
+            box.querySelector(".full-X").style.display = "none";   
         })
-    // })
     
-// }
+    
+}
 
 
